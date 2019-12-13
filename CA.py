@@ -251,8 +251,8 @@ class EPSDrawer(Drawer):
 
 
 if __name__ == "__main__":
-    rule = 18
-    n = 256
+    rule = 110
+    n = 150
     ca = CA(rule,n)
     ca.start_single()
     ca.loop(n-1)
