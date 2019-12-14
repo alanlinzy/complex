@@ -103,8 +103,8 @@ class Drawer(object):
     
     def draw_array(self, a):
         """Iterate through array (a) and draws any non-zero cells."""
-        for i in xrange(self.rows):
-            for j in xrange(self.cols):
+        for i in range(self.rows):
+            for j in range(self.cols):
                 if a[i,j]:
                     self.draw_cell(j, self.rows-i-1)
 
