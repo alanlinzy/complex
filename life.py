@@ -1,5 +1,6 @@
 import numpy
 import scipy.ndimage
+import time
 
 class Life(object):
     def __init__(self,n,mode = "wrap",random = False):
@@ -21,6 +22,7 @@ class Life(object):
                                              mode = self.mode)
         boolean = (con==3)|(con==12)|(con==13)
         self.array = numpy.int8(boolean)
+        time.sleep(0.5)
 
     def loop(self, steps = 1):
         [self.step() for i in xrange(steps)]
@@ -32,7 +34,7 @@ class Life(object):
 
 
 import matplotlib
-matplotlib.use("TkAgg")
+#matplotlib.use("TkAgg")
 import matplotlib.pyplot as pyplot
 class LifeViewer(object):
     def __init__(self,life,cmap = matplotlib.cm.gray_r):
