@@ -25,7 +25,7 @@ class People(object):
 
         
         self.status = self.NORMAL
-        self.transmission = 450 #probability self condition
+        self.transmission = 200 #probability self condition
         self.recover = 2 # self healing
         self.incubation = random.randint(7,14) # incubation period
         self.deadrate = 2
@@ -195,6 +195,23 @@ class World(object):
                     neighbor_status_list.append(None)
                 try:#right
                     neighbor_status_list.append(self.world_map[x+1][y].status)
+                except:
+                    neighbor_status_list.append(None)
+                    
+                try:#up left
+                    neighbor_status_list.append(self.world_map[x-1][y-1].status)
+                except:
+                    neighbor_status_list.append(None)
+                try:#down left
+                    neighbor_status_list.append(self.world_map[x-1][y+1].status)
+                except:
+                    neighbor_status_list.append(None)
+                try:#up right
+                    neighbor_status_list.append(self.world_map[x+1][y-1].status)
+                except:
+                    neighbor_status_list.append(None)
+                try:#down right
+                    neighbor_status_list.append(self.world_map[x+1][y+1].status)
                 except:
                     neighbor_status_list.append(None)
 
